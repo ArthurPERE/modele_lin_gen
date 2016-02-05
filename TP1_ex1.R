@@ -36,9 +36,32 @@ Ra = 20/265
 # n4 = 1 parmie 4 * 4 parmie 5 = 20
 # n5 = 0 parmie 4 * 5 parmie 5 = 1
 
-choose(4,4)*choose(5,1) + choose(4,3)*choose(5,2)+choose(4,2)*choose(5,3)+choose(4,1)*
+N=choose(4,4)*choose(5,1) + choose(4,3)*choose(5,2)+choose(4,2)*choose(5,3)+choose(4,1)*
   choose(5,4)+choose(4,0)*choose(5,5)
 
 # notre tableau 1 est le tableau initial, on peut calculer la proba que l'on observe ce tab
 p1 = 5/126
 # environ 4% 
+
+# H0 : P(M|A) = P(M|B)    H1 : P(M|A) > P(M|B)
+
+
+# On calcul la distance des tab avec un cal du determinant, on prend la distance du tab
+# qu'on a au debut, ensuite on additionne le nombre de talbeau dont la distance est >= 
+# a la distance du tab d'origine et on divise le tout par N (voire ligne 39)
+
+
+fisher.test(matrix(c(4,0,1,4), nrow=2, ncol=2))
+
+
+### Reour au data
+fisher.test(t(data))
+
+RR = Rb/Ra
+V = 290/(10*300)+245/(20*265) # Var(ln(RR))
+log(RR) + 1.96 * sqrt(V)
+log(RR) - 1.96 * sqrt(V)
+
+Dr = abs(Rb-Ra)
+1/Dr # NNT qui est le nombre de patient qu'il faut traiter pour eviter la foramtion d'une
+# anomalie
