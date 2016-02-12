@@ -48,4 +48,4 @@ ORmh = ( (19*324/405)+(11*84/123)+(47*215/356)+(19*43/91) )/
 
 # ORmh = 5.56[3.85 8.03]
 # chisq mh = 93.69 (voire cours pour la formule modele lineaire generalises partie 1
-# 28eme diapositive)
+# 26eme diapositive)
