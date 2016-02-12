@@ -49,3 +49,14 @@ ORmh = ( (19*324/405)+(11*84/123)+(47*215/356)+(19*43/91) )/
 # ORmh = 5.56[3.85 8.03]
 # chisq mh = 93.69 (voire cours pour la formule modele lineaire generalises partie 1
 # 26eme diapositive)
+
+# chisq zelen = sum(chisq i) -chisq mh = 10.06 > 7.81
+# donc il y a un effet age et tabagisme 
+
+b = array(c(19,15,47,324,
+        11,11,17,84,
+        47,56,39,215,
+        19,23,6,43),
+      dim=c(2,2,4))
+
+mantelhaen.test(b)
