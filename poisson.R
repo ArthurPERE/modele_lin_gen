@@ -12,5 +12,6 @@ pa = sum(tab$Under.5.1981) * 9
 lambda = n/pa # 2.63 pour 1000 pa
 
 # intervalle de confiance
-
-lambda + 1.96 * 
+# var(lambda) = var(N * 1/pa) = 1/pa^2 * var(N) = n/pa^2
+lambda + 1.96 * sqrt(n)/pa
+lambda - 1.96 * sqrt(n)/pa
