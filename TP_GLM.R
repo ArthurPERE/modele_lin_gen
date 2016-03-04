@@ -160,6 +160,24 @@ segments(c(1,2,3,4),BSmodlin,c(1,2,3,4),BImodlin)
 # b0 = -1.86 ; b1 = 0.86
 
 rm(glm1, glm2, glm3, glm4, glm5, BImodlin, BSmodlin, OR, ORmodlin, i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ================================================================================
 ####### Question 4
 # ================================================================================
@@ -173,10 +191,15 @@ summary(glm6)
 
 # ORage = 4.31 ; ORalcool = 5.67 ; ORtabac = 2.23
 
+# OR110/000 = exp(b1+b2) = 24.43
+# OR100/011 = exp(b1-b2-b3) = 0.34 
 
 
-
-
+glm7 = glm(malade~age+alcool*tabac, data=tab2, family='binomial')
+summary(glm7)
+# ln(oddsM|010) = b0 + b2
+# ln(oddsM|011) = b0 + b2 + b3 + b4
+# ln(oddsM|001) = b0 + b3
 
 
 
